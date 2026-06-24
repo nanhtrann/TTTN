@@ -4,3 +4,6 @@
 - [x] Update `src/components/admin-multipleContent.jsx` để không fallback 'Tiêu đề' khi title rỗng
 - [ ] (Optional) Chạy test thủ công trên UI admin để xác nhận không còn thấy container[0]
 - [ ] Commit thay đổi (nếu bạn dùng git)
+- [x] Tách `defaultProps` khỏi `src/admin-puck-config.jsx` sang `src/admin-default-data.js`
+- [ ] Chạy `npm run build` để kiểm tra compile
+
