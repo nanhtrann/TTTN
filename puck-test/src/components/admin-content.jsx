@@ -74,14 +74,21 @@ const AdminContent = (props) => {
     <div
       className={`flex flex-col justify-center p-20 h-137.5 w-full ${align[layout.align]}`}
       style={{
-        background: `linear-gradient(135deg, ${gradientFrom}, ${gradientTo})`,
+        backgroundImage: `url('https://webdemo.hexagon.xyz/medias/hieuunghero.webp')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
         color: textColor,
         fontSize: `${fontSize}px`,
         fontFamily: fontFamily,
       }}
     >
       <div
-        className={`w-full max-w-[400px] bg-[#ffffff1f] backdrop-blur-[30px] shadow-[0_8px_32px_0_rgba(0,0,0,0.2)] flex flex-col p-6 ${containerSideClasses}`}
+        className={`w-full max-w-[400px] bg-[#ffffff1f] backdrop-blur-[30px] shadow-[0_8px_32px_0_rgba(0,0,0,0.2)] flex flex-col p-6 transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] ${containerSideClasses}`}
+        style={{
+          borderTopRightRadius: '3rem',
+          borderBottomLeftRadius: '3rem',
+        }}
       >
         <p
           className={`my-1 ${sizeH[eyebrow.level]}`}
@@ -103,7 +110,7 @@ const AdminContent = (props) => {
         </p>
         <div className="w-full flex justify-center mt-4">
           <button
-            className={`px-6 py-2 rounded-full ${sizeH[button.level]} ${buttonSideClasses}`}
+            className={`px-6 py-2 rounded-full transition-all duration-300 hover:brightness-110 hover:scale-105 active:scale-95 ${sizeH[button.level]} ${buttonSideClasses}`}
             style={{
               color: button.colorText || '#000000',
               fontWeight: 600,

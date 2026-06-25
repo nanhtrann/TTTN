@@ -62,8 +62,8 @@ const AdminMultipleContent = (props) => {
     };
 
     return (
-        <div
-            className={`flex flex-col px-20 py-5 h-160 w-full`}
+            <div
+            className={`flex flex-col px-20 py-5 h-160 w-full bg-[#7dd3fc]`}
             style={{
               background: `linear-gradient(135deg, ${gradientFrom}, ${gradientTo})`,
               color: textColor,
@@ -83,7 +83,7 @@ const AdminMultipleContent = (props) => {
 
                     <p
                         className={`px-4 ${sizeH[subtitle?.level] || sizeH[2]}`}
-                        style={{ fontWeight: 600 }}
+                        style={{ fontWeight: 600, color: subtitle?.color || '#9bd8ff' }}
                     >
                         {subtitle?.content}
                     </p>
@@ -95,6 +95,11 @@ const AdminMultipleContent = (props) => {
                         
                         const containerRadius = item?.containerRadius || [];
                         const containerSideClasses = containerRadius.join(' ');
+                        const defaultSideClasses = "rounded-tl-4xl rounded-tr-none rounded-br-4xl rounded-bl-none";
+
+                        const finalSideClasses = containerSideClasses ? containerSideClasses : defaultSideClasses;
+
+
                         
                         const title = item?.title;
 
@@ -110,7 +115,9 @@ const AdminMultipleContent = (props) => {
                         return (
                             <div
                                 key={idx}
-                                className={`w-max md:w-85 h-50 bg-[#ffffff1f] backdrop-blur-[30px] shadow-[0_8px_32px_0_rgba(0,0,0,0.2)] flex flex-col items-center justify-center p-4 overflow-hidden ${containerSideClasses}`}
+                                className={`w-max md:w-85 h-50 bg-[#38bdf8]/20 backdrop-blur-[30px] shadow-[0_8px_32px_0_rgba(0,0,0,0.2)] flex flex-col items-center justify-center p-4 overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:bg-[#38bdf8]/30 ${finalSideClasses}`}
+
+
                             >
                                 {icon ? (
                                     (icon.type === 'image' || !icon.type) ? (
@@ -129,16 +136,17 @@ const AdminMultipleContent = (props) => {
                                 ) : null}
                                 <div
                                     className={`mb-3 ${sizeH[title?.level] || sizeH[2]}`}
-                                    style={{ color: title?.color || '#000000', fontWeight: 'bold' }}
+                                    style={{ color: title?.color || '#ffffff', fontWeight: 'bold', textAlign: 'center' }}
                                 >
                                     {title?.content || 'Tiêu đề'}
                                 </div>
 
 
                                 <button
-                                    className={`px-4 w-33 h-13 ${sizeH[button?.level] || sizeH[4]} ${button?.buttonRadius?.join?.(' ') || ''}`}
+                                    className={`px-4 py-2 rounded-full whitespace-nowrap transition-all duration-300 hover:brightness-125 hover:scale-105 active:scale-95 ${sizeH[button?.level] || sizeH[4]} ${button?.buttonRadius?.join?.(' ') || ''}`}
+
                                     style={{
-                                        color: button?.color || '#000000',
+                                        color: button?.color || '#ffffff',
                                         fontWeight: 600,
                                         ...getBtnBgStyle(button?.buttonBg),
                                     }}

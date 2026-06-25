@@ -1,9 +1,21 @@
-# TODO
-- [x] Fix rendering khi title rỗng (không render wrapper card container tương ứng)
-- [x] Update `src/components/admin-aboutContent.jsx` để filter item trước khi render
-- [x] Update `src/components/admin-multipleContent.jsx` để không fallback 'Tiêu đề' khi title rỗng
-- [ ] (Optional) Chạy test thủ công trên UI admin để xác nhận không còn thấy container[0]
-- [ ] Commit thay đổi (nếu bạn dùng git)
-- [x] Tách `defaultProps` khỏi `src/admin-puck-config.jsx` sang `src/admin-default-data.js`
-- [ ] Chạy `npm run build` để kiểm tra compile
+# TODO - AboutContent enhancements
+
+- [ ] Update `Info` component UI (admin-aboutContent.jsx):
+  - [ ] Add hover effect: `transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl cursor-pointer`
+  - [x] Add left “bán nguyệt” rounding: use `rounded-l-3xl`
+  - [ ] Keep `overflow-hidden` and glassmorphism style
+
+
+- [ ] Update `paragraph` images rendering data (admin-default-data.js):
+  - [x] Add `images: [img1, img2]` for the `VỀ CÂU LẠC BỘ` paragraph
+
+
+- [ ] Update editor schema (admin-puck-config.jsx):
+  - [x] Add `images` field under AboutContent -> paragraph objectFields (array of URLs)
+
+
+- [ ] Run dev/build and visually verify:
+  - [x] Hover/scale/shadow on Info cards (review bằng mắt khi chạy dev)
+  - [x] 2 images show under paragraph (review bằng mắt khi chạy dev)
+
 

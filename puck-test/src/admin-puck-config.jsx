@@ -13,7 +13,9 @@ import { AdminNewsGrid } from './components/AdminNewsGrid';
 import { AdminCommunityValues } from './components/AdminCommunityValues';
 import { AdminContactSection } from './components/AdminContactSection';
 import { AdminFooter } from './components/AdminFooter';
+import { AdminDynamicCard } from "./components/AdminDynamicCard";
 import { componentDefaultProps } from './admin-default-data';
+
 
 
 
@@ -554,8 +556,18 @@ export const puckConfig = {
                   ],
                   default: 2,
                 },
+                images: {
+                  type: 'array',
+                  label: 'Ảnh (hiển thị 2 ảnh đầu)',
+                  maxItems: 2,
+                  arrayFields: {
+                    url: { type: 'text', label: 'URL ảnh' },
+                  },
+                  getItemSummary: (item) => item?.url || 'Image',
+                },
               }
             },
+
 
             infoItems: {
               type: 'array',
@@ -735,6 +747,27 @@ export const puckConfig = {
       },
       defaultProps: componentDefaultProps.Footer,
       render: (props) => <AdminFooter {...props} />,
+    },
+
+    AdminDynamicCard: {
+      render: (props) => <AdminDynamicCard {...props} />,
+      defaultProps: componentDefaultProps.AdminDynamicCard,
+      fields: {
+        title: { type: "text" },
+        subtitle: { type: "text" },
+        content: { type: "textarea" },
+        imageUrl: { type: "text" },
+        themeColor: { type: "text" },
+        borderRadius: { type: "text" },
+        listType: { type: "select", options: [{ label: "Hộp", value: "box" }, { label: "Dấu gạch", value: "bullet" }] },
+        items: {
+          type: "array",
+          arrayFields: {
+            label: { type: "text" },
+            text: { type: "text" },
+          },
+        },
+      },
     },
   },
 
