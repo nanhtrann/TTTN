@@ -1,22 +1,15 @@
 import { motion } from "framer-motion";
-import { useLanguage } from "../context/LanguageContext";
-import { content } from "../i18n";
 
 export const ServiceSection = (props: any) => {
-  const { lang } = useLanguage();
   const { showButton, services = [], isAnimated } = props;
+  const sectionTitle = props.title || 'Lĩnh vực hoạt động';
+  const sectionDesc = props.description || 'Tại Hexagon, chúng tôi tập trung phát triển hệ sinh thái công nghệ toàn diện, bao gồm:';
 
   return (
     <section className="py-20 px-16 bg-black">
       <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold text-white mb-4">
-          {lang === 'vi' ? 'Lĩnh vực hoạt động' : 'Our Services'}
-        </h2>
-        <p className="text-gray-400">
-          {lang === 'vi' 
-            ? 'Tại Hexagon, chúng tôi tập trung phát triển hệ sinh thái công nghệ toàn diện, bao gồm:' 
-            : 'At Hexagon, we focus on developing a comprehensive technology ecosystem, including:'}
-        </p>
+        <h2 className="text-4xl font-bold text-white mb-4">{sectionTitle}</h2>
+        <p className="text-gray-400">{sectionDesc}</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-7xl mx-auto">
@@ -40,7 +33,7 @@ export const ServiceSection = (props: any) => {
               <p className="text-white text-sm mb-4 leading-relaxed">{s.desc}</p>
               {showButton === "true" && (
                 <a href="#" className="inline-block text-blue-300 font-bold hover:underline">
-                  {lang === 'vi' ? 'Xem chi tiết →' : 'Read more →'}
+                  {'Xem chi tiết →'}
                 </a>
               )}
             </div>

@@ -1,7 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useLanguage } from "../context/LanguageContext";
 import { content } from "../i18n";
+import { getLocaleFromStorage } from "../utils/pageLocale";
+
+const getLang = () => getLocaleFromStorage();
 
 interface NewsItem {
   imageUrl: string;
@@ -13,19 +15,25 @@ interface NewsItem {
 
 interface NewsGridProps {
   newsItems?: NewsItem[];
+  title?: string;
+  subtitle?: string;
 }
 
 export const NewsGrid: React.FC<NewsGridProps> = ({ 
-  newsItems = [] 
+  newsItems = [],
+  title: propTitle,
+  subtitle: propSubtitle,
 }) => {
-  const { lang } = useLanguage();
+  const lang = getLang();
   const t = content[lang as keyof typeof content].news;
+  const title = propTitle || t.title;
+  const subtitle = propSubtitle || t.subtitle;
 
   return (
     <section className="py-16 px-8 bg-[#111111] text-white">
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold mb-4">{t.title}</h2>
-        <p className="text-gray-400">{t.subtitle}</p>
+        <h2 className="text-4xl font-bold mb-4">{title}</h2>
+        <p className="text-gray-400">{subtitle}</p>
         <div className="w-16 h-1 bg-yellow-500 mx-auto mt-4"></div>
       </div>
 
@@ -40,7 +48,7 @@ export const NewsGrid: React.FC<NewsGridProps> = ({
                 <div className="flex justify-between items-center mt-auto">
                   <span className="text-sm text-gray-500 flex items-center gap-2">📅 {item.date}</span>
                   <a href={item.link} className="text-yellow-500 font-bold flex items-center gap-1 hover:underline">
-                    {lang === 'vi' ? 'Xem chi tiết →' : 'Read more →'}
+                    {'Xem chi tiết →'}
                   </a>
                 </div>
               </div>
@@ -58,7 +66,7 @@ export const NewsGrid: React.FC<NewsGridProps> = ({
                 <div className="border-t border-[#333] pt-4 flex justify-between items-center">
                   <span className="text-sm text-gray-500">📅 {item.date}</span>
                   <a href={item.link} className="text-yellow-500 font-bold text-sm hover:underline">
-                    {lang === 'vi' ? 'Xem chi tiết →' : 'Read more →'}
+                    {'Xem chi tiết →'}
                   </a>
                 </div>
               </div>
@@ -68,7 +76,7 @@ export const NewsGrid: React.FC<NewsGridProps> = ({
 
         <div className="text-center mt-8">
           <button className="bg-gradient-to-r from-teal-600 to-green-500 hover:from-teal-700 hover:to-green-600 text-white px-8 py-3 rounded-lg font-bold flex items-center gap-2 mx-auto">
-            {lang === 'vi' ? 'Xem tất cả bài viết ❯' : 'View all articles ❯'}
+            {'Xem tất cả bài viết ❯'}
           </button>
         </div>
       </div>

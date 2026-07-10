@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
-import { useLanguage } from "../context/LanguageContext";
 
 export const MemberCarousel = (props: any) => {
-  const { lang } = useLanguage();
   const { 
     title, members = [], bgType, bgColor, bgImage, 
     gradientDirection, gradientColors, isAnimated 
@@ -40,7 +38,7 @@ export const MemberCarousel = (props: any) => {
             >
               <img 
                 src={member.logoUrl} 
-                alt={lang === 'vi' ? "Đối tác" : "Partner"} 
+                alt={props.memberAlt || "Đối tác"} 
                 className="max-h-20 max-w-[70%] object-contain opacity-80 hover:opacity-100" 
               />
             </div>

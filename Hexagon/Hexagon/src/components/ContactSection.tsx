@@ -1,26 +1,33 @@
 import { MapPin, Mail, Phone } from 'lucide-react';
-import { useLanguage } from "../context/LanguageContext";
 import { content } from "../i18n";
+import { getLocaleFromStorage } from "../utils/pageLocale";
+
+const getLang = () => getLocaleFromStorage();
 
 export const ContactSection = (props: any) => {
-  const { lang } = useLanguage();
+  const lang = getLang();
   const t = content[lang as keyof typeof content].contact;
 
-  const { address, email, hotline, mapUrl } = props;
+  const title = props.title || t.title;
+  const desc = props.desc || t.desc;
+  const address = props.address ?? (t as any).address;
+  const email = props.email ?? (t as any).email;
+  const hotline = props.hotline ?? (t as any).hotline;
+  const mapUrl = props.mapUrl ?? (t as any).mapUrl;
 
   return (
     <section className="py-20 px-8 bg-[#111111] text-white">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         
         <div>
-          <h2 className="text-4xl font-bold mb-6">{t.title}</h2>
-          <p className="text-gray-400 mb-10 text-lg">{t.desc}</p>
+          <h2 className="text-4xl font-bold mb-6">{title}</h2>
+          <p className="text-gray-400 mb-10 text-lg">{desc}</p>
           
           <div className="space-y-6">
             <div className="flex items-start gap-4">
               <div className="p-3 rounded-full border border-teal-500/30 text-teal-500"><MapPin size={24} /></div>
               <div>
-                <p className="font-bold text-gray-300">{lang === 'vi' ? 'Trụ sở chính' : 'Headquarters'}</p>
+                <p className="font-bold text-gray-300">{props.headquartersLabel || 'Trụ sở chính'}</p>
                 <p className="text-gray-400">{address}</p>
               </div>
             </div>

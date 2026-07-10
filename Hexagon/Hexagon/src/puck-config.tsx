@@ -63,6 +63,7 @@ export const config = {
     
     Hero: {
       fields: {
+        services: { type: "array", arrayFields: { text: { type: "text" } }, label: "Danh sách services (dòng gõ)" },
         description: { type: "textarea", label: "Đoạn văn mô tả" },
         backgroundColor: { type: "text", label: "Màu nền Hero" },
         textColor: { type: "text", label: "Màu chữ" },
@@ -73,6 +74,12 @@ export const config = {
         secondaryButtonText: { type: "text", label: "Nút phụ" },
       },
       defaultProps: {
+        services: [
+          "Cung cấp thiết bị CNTT",
+          "Dịch vụ CNTT",
+          "Giải pháp công nghệ",
+          "Thi công & Lắp đặt"
+        ],
         description: "HEXAGON kiến tạo các giải pháp chuyển đổi số toàn diện, từ phần mềm đến cung cấp các giải pháp internet, thiết bị công nghệ thông tin, giúp doanh nghiệp bứt phá trong kỷ nguyên số.",
         backgroundColor: "#1e5a40",
         textColor: "#ffffff",
@@ -88,6 +95,8 @@ export const config = {
     AboutSection: {
       fields: { 
         ...sharedFields,
+        quote: { type: "textarea", label: "Quote (chữ nghiêng)" },
+        quoteAuthor: { type: "text", label: "Tác giả quote" },
         title: { type: "text", label: "Tiêu đề" },
         description: { type: "textarea", label: "Mô tả" },
         items: { type: "array", arrayFields: { title: { type: "text" }, desc: { type: "text" } }, label: "Danh sách thông tin" },
@@ -107,6 +116,9 @@ export const config = {
         ],
         imageUrl: "/pictures/picture.jpg",
         showButton: "false"
+        ,
+        quote: '"Làm ngày, làm đêm, làm thêm ngày nghỉ ^_^"',
+        quoteAuthor: "— HEXAGON CULTURE"
       },
       render: (props: any) => <AboutSection {...props} />,
     },
@@ -135,6 +147,8 @@ export const config = {
         bgColor: "#000000",
         isAnimated: "true",
         showButton: "true",
+        title: "Lĩnh vực hoạt động",
+        description: "Tại Hexagon, chúng tôi tập trung phát triển hệ sinh thái công nghệ toàn diện, bao gồm:",
         services: [
           { title: "Giải pháp công nghệ", desc: "Phát triển và triển khai các giải pháp phần mềm tùy chỉnh, tối ưu vận hành doanh nghiệp, nâng cao hiệu suất, đáp ứng linh hoạt.", image: "/pictures/pic1.jpg", hoverImage: "/pictures/pic5.png" },
           { title: "Giải pháp thi công", desc: "Tư vấn chiến lược chuyển đổi số toàn diện, giúp doanh nghiệp tối ưu quy trình, nâng cao trải nghiệm khách hàng và tăng trưởng bền vững.", image: "/pictures/pic2.jpg", hoverImage: "/pictures/pic5.png" },
