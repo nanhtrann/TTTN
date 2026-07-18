@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LDP</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="Css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body class="">
+    <header 
+    class="bg-header d-flex align-items-center w-100 px-5 z-1"
+    style="height: 80px"
+    >   
+        <div class="container px-5 d-flex align-items-center justify-content-between ">
+            <a href="/" class="h-100 align-items-center justify-content-between d-flex">
+                <img src="Asset/TN/iconapp.png" alt="logo" class="h-100 w-auto img-fluid">
+            </a>
+            <div class="align-items-center d-flex gap-4">
+                <i class="fa-solid fa-house text-white fs-3"></i>
+                <i class="fa-brands fa-facebook text-white fs-3"></i>
+
+                <a href="/" class="">
+                    <img src="Asset/TN/đn.png" alt="" class="ms-3 img-fluid">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="w-100 bg-section align-items-center justify-content-center">
+        <div class="w-100 d-flex flex-column align-items-center">
+            <img src="Asset/TN/Logo-HaoKhiDuHiep.png" alt="Hào Khí Du Hiệp" class="Haokhiduhiep img-fluid">
+
+            <img src="Asset/TN/text.png" alt="" class="ldp-text start-50 img-fluid"/>
+            
+        </div>
+        <!--Phần nav bar-->
+        <div class="mt-5 row g-2 align-items-end justify-content-center bg-nav ">
+            <div class="col-auto">
+                <a data-bs-toggle="modal" data-bs-target="#modalTheLe" class="d-block">
+                    <img src="Asset/TN/thele.png" alt="Thể Lệ" class="img-fluid nav-btn" style="max-width: 200px;">
+                </a>
+            </div>
+
+            <div class="col-auto">
+                <a data-bs-toggle="modal" data-bs-target="#modalHuongdan" class="d-block">
+                    <img src="Asset/TN/hd.png" alt="Hướng dẫn" class="img-fluid nav-btn" style="max-width: 200px;">
+                </a>
+            </div>
+
+            <div class="col-auto">
+                <a href="#dangkyduthi"  class="d-block nav-btn-div">
+                    <img src="Asset/TN/thamgia.png" alt="Tham gia" class="img-fluid nav-btn-main" style="max-width: 230px;">
+                </a>
+            </div>
+
+            <div class="col-auto">
+                <a href="/trangtaigame " data-bs-toggle="modal" data-bs-target="" class="d-block">
+                    <img src="Asset/TN/taigame.png" alt="Tải game" class="img-fluid nav-btn" style="max-width: 200px;">
+                </a>
+            </div>
+
+            <div class="col-auto">
+                <a href="/trangnapthe" data-bs-toggle="modal" data-bs-target="" class="d-block">
+                    <img src="Asset/TN/napthe.png" alt="Nạp thẻ" class="img-fluid nav-btn" style="max-width: 200px;">
+                </a>
+            </div>
+
+        </div>
+
+        <!--Đăng ký dự thi ...-->
+        <div class="container mt-5 mx-auto" id="dangkyduthi"> 
+            <div class="align-items-center justify-content-center d-flex text-center h-auto my-3">
+                <img src="/Asset/TN/đkdt.png" alt="Đăng ký dự thi" class="dkdt">
+            </div>
+            <div class="row gap-1">
+                <div class="col-6 align-items-center justify-content-center flex-column d-flex gap-3">
+                    <div class="w-100">
+                        <img src="/Asset/TN/themanh.png" alt="" class="w-100 h-100">
+                    </div>
+                    <div class="d-flex gap-2">
+                        <img src="/Asset/TN/themanhnho.png" alt="" class="addpic">
+                        <img src="/Asset/TN/themanhnho.png" alt="" class="addpic">
+                        <img src="/Asset/TN/themanhnho.png" alt="" class="addpic">
+                    </div>
+                    <div class="w-100 text-center">
+                        <p class="text">
+                            <i style="font-weight: 400 !important;">*Bắt buộc phải đăng ký 4 ảnh dự thi</i>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-5 gap-3 ">
+                    <div class="w-100">
+                        <p class="text">Nhân vật: <strong style="color: #FFE779;">Lục trà Bạc hà</strong></p>
+                        <p class="text">Bang hội: <strong style="color: #FFE779;">Lạc Viên</strong></p>
+                        <p class="text">Máy chủ: <strong style="color: #FFE779;">S1 - Lý Bạch</strong></p>
+                    </div>
+
+                    <div class="d-flex flex-row align-content-center justify-content-center align-items-center gap-3">
+                        <div class="form-check d-flex flex-row align-content-center justify-content-center align-items-center gap-2">
+                            <input
+                                class="form-check-input"
+                                type="radio"
+                                name="gender"
+                                id="ThiMrs"
+                            />
+                            <label class="form-check-label" for="ThiMrs" >
+                                <img src="/Asset/TN/thimiss.png" alt="" class="" style="width: 150px;">
+                            </label>
+                        </div>
+                        <div class="form-check d-flex flex-row align-content-center justify-content-center align-items-center gap-2">
+                            <input
+                                class="form-check-input"
+                                type="radio"
+                                name="gender"
+                                id="ThiMr"
+                            />
+                            <label class="form-check-label" for="ThiMr">
+                                <img src="/Asset/TN/thimisster.png" alt="" class="" style="width: 150px;">
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <input type="text" class="input-address px-4 w-100 mt-3" placeholder="Nhập địa chỉ liên hệ để nhận thưởng">
+
+                    <div class="mt-3">
+                        <div class="d-flex w-100 gap-4">
+                            <input type="text" class="input-phone ps-4 w-40 " placeholder="Nhập số điện thoại">
+                            <input type="text" class="input-area ps-4 w-40 " placeholder="Chọn khu vực">
+                        </div>
+                    </div>
+
+                    <p class="text mt-3">Nhập ảnh CMND/CCCD mặt trước và sau</p>
+
+                    <div class="mt-3">
+                        <div class="d-flex w-100 gap-3 px-5">
+                            <button class="btn btn-mattruoc w-50"></button>
+                            <button class="btn btn-matsau w-50"></button>
+                        </div>
+                    </div>
+
+                    <div class="w-100 mt-3">
+                        <textarea class="w-100 ndgt ps-4 py-3 pe-2" name="" id="" placeholder="Nhập nội dung giới thiệu (không quá 300 kí tự)"></textarea>
+                    </div>
+
+                    <div class="w-100 mt-3">
+                        <input class="input-address w-100 px-4" name="" id="" placeholder="Nhập video dự thi" />
+                    </div>
+
+                    <div class="mt-3 d-flex align-items-center justify-content-center">
+                        <button class="btn btn-dongy w-50" data-bs-toggle="modal" data-bs-target="#modalThanhcong"></button>
+                        <button class="btn btn-cancel w-50"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!--Phần Pop up-->
+    <div class="modal fade" id="modalTheLe" data-bs-focus="false" data-bs-backdrop="false" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <button type="button" class="btn-close modal-close-btn" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalHuongdan" data-bs-focus="false" data-bs-backdrop="false" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <button type="button" class="btn-close modal-close-btn" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalThanhcong" data-bs-focus="false" data-bs-backdrop="false" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <button type="button" class="btn-close modal-close-btn-thanhcong" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-content">
+                
+                <p class="success-text text-center">ĐÃ ĐĂNG KÝ THÀNH CÔNG</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

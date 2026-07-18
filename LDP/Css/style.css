@@ -1,0 +1,364 @@
+:root {
+  --bs-body-font-family: 'Montserrat', sans-serif;
+}
+
+.bg-header {
+    background-color: #8A008F !important;
+}
+
+.Haokhiduhiep {
+    width: 465px;
+    height: 465px;
+    position: absolute;
+    left: 50%;
+    top: -100px;
+    transform: translateX(-50%);
+
+    z-index: 3;
+}
+
+.bg-section {
+    background-image: url('../Asset/TN/BGTRANGVOTING.png');
+    background-position: top center;
+    background-repeat: no-repeat;
+    object-fit: contain;
+    overflow: hidden;
+    min-height: auto;
+    background-size: 100% auto;
+    z-index: 0;
+}
+
+.ldp-text {
+    margin-top: 270px;
+    width: 620px;
+    z-index: 2;  
+}
+
+
+/* Thanh nav bar */
+.bg-nav {
+    position: relative;
+    padding-bottom: 40px;
+}
+
+.bg-nav::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -20px;
+
+    width: 80%;
+
+    height: 100%;
+
+    background-image: url('../Asset/TN/khungdautrang.png');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 100% auto;
+
+    z-index: 0;
+    pointer-events: none;
+}
+
+.bg-nav > * {
+    position: relative;
+    z-index: 1;
+}
+
+.nav-btn {
+    transition: all 0.3s ease-out; 
+    cursor: pointer;
+}
+
+.nav-btn:hover {
+    filter: brightness(0.9) hue-rotate(55deg) saturate(1);
+}
+
+.nav-btn-div{
+    transition: transform 0.4s ease-out;
+    position: relative;
+    display: inline-block;
+}
+
+.nav-btn-div .nav-btn-main{
+    transition: opacity 0.35s ease, filter 0.35s ease, transform 0.35s ease;
+    display: block;
+    filter: hue-rotate(0deg) saturate(1) brightness(1) contrast(1);
+}
+
+.nav-btn-div:hover .nav-btn-main{
+    opacity: 0.95 !important;
+    filter: hue-rotate(-50deg) saturate(1.3) brightness(1) contrast(0.9) !important;
+}
+
+
+/* Đăng ký dự thi */
+.dkdt{
+    width: 560px;
+    height: 130px;
+}
+
+.addpic{
+    width: 206px;
+    height: 155px;
+}
+
+.text{
+    font-weight: 500;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: white;
+}
+
+.form-check-input[type="radio"] {
+    width: 23px;
+    height: 23px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('/Asset/TN/box text.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+}
+
+.input-address{
+    background-image: url('/Asset/TN/box\ text.png');
+    background-size: 100% 100%;
+    background-color: none;
+    min-height: 50px;
+
+    background-color: transparent !important; 
+    border: none !important;                  
+    outline: none !important;                
+    box-shadow: none !important;
+}
+
+.input-address::placeholder{
+    color: #7D037F;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 100%;
+    opacity: 50%;
+}
+
+.input-phone{
+    background-image: url('/Asset/TN/boxtextngan.png');
+    background-size: 100% 100%;
+    background-color: none;
+    background-repeat: no-repeat;
+    min-height: 50px;
+    object-fit: cover;
+    width: 48%;
+
+    background-color: transparent !important; 
+    border: none !important;                  
+    outline: none !important;                
+    box-shadow: none !important;
+}
+
+.input-phone::placeholder{
+    color: #7D037F;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 100%;
+    opacity: 50%;
+}
+
+.input-area{
+    background-image: url('/Asset/TN/boxtextngan.png');
+    background-size: 100% 100%;
+    background-color: none;
+    background-repeat: no-repeat;
+    min-height: 50px;
+    object-fit: cover;
+    width: 48%;
+
+    background-color: transparent !important; 
+    border: none !important;                  
+    outline: none !important;                
+    box-shadow: none !important;
+}
+
+.input-area::placeholder{
+    color: #7D037F;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 100%;
+    opacity: 50%;
+}
+
+.btn-mattruoc{
+    background-image: url('/Asset/TN/mattruoc.png');
+    background-size: 100% 100%;
+    background-color: none;
+    background-repeat: no-repeat;
+    min-height: 50px;
+    object-fit: cover;
+
+
+    background-color: transparent !important; 
+    border: none !important;                  
+    outline: none !important;                
+    box-shadow: none !important;
+}
+
+.btn-matsau{
+    background-image: url('/Asset/TN/matsau.png');
+    background-size: 100% 100%;
+    background-color: none;
+    background-repeat: no-repeat;
+    min-height: 50px;
+    object-fit: cover;
+
+
+    background-color: transparent !important; 
+    border: none !important;                  
+    outline: none !important;                
+    box-shadow: none !important;
+}
+
+.ndgt{
+    background-image: url('/Asset/TN/boxtext\ bự.png');
+    background-size: 100% 100%;
+    background-color: none;
+    background-repeat: no-repeat;
+    min-height: 100px;
+    object-fit: cover;
+    resize: none;
+
+    background-color: transparent !important; 
+    border: none !important;                  
+    outline: none !important;                
+    box-shadow: none !important;
+}
+
+.ndgt::placeholder{
+    color: #7D037F;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 100%;
+    opacity: 50%;   
+}
+
+.btn-dongy{
+    background-image: url('/Asset/TN/buttondongy.png');
+    background-size: 100% 100%;
+    background-color: none;
+    background-repeat: no-repeat;
+    min-height: 75px;
+    object-fit: cover;
+    resize: none;
+
+    background-color: transparent !important; 
+    border: none !important;                  
+    outline: none !important;                
+    box-shadow: none !important;
+}
+
+.btn-cancel{
+    background-image: url('/Asset/TN/buttonhuybo.png');
+    background-size: 100% 100%;
+    background-color: none;
+    background-repeat: no-repeat;
+    min-height: 75px;
+    object-fit: cover;
+    resize: none;
+
+    background-color: transparent !important; 
+    border: none !important;                  
+    outline: none !important;                
+    box-shadow: none !important;
+}
+
+.success-text{
+    font-weight: 700;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: white;
+}
+
+/* Pop up */
+#modalTheLe {
+    background-image: url('../Asset/TN/popup_thele.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: contain;
+    overflow: hidden;
+    background-size: 60% 100%;
+    min-height: 680px;
+}
+
+#modalHuongdan {
+    background-image: url('../Asset/TN/popup_huongdan.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: contain;
+    overflow: hidden;
+    background-size: 60% 100%;
+    min-height: 680px;
+}
+
+#modalThanhcong{
+    background-image: url('../Asset/TN/popup_thongbao.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: contain;
+    overflow: hidden;
+}
+
+.modal-backdrop.show {
+    opacity: 0.35;
+}
+
+.modal {
+    z-index: 2000;
+    cursor: pointer;
+
+}
+
+.modal-dialog {
+    max-width: 600px;
+}
+
+.modal-content{
+    background: none;
+    outline: none;
+    border:none;
+    color: white;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 66px;
+    right: -115px;
+    width: 60px;
+    height: 60px;
+    opacity: 0.95;
+    z-index: 2055;
+    pointer-events: auto;
+    background: none;
+}
+
+.modal-close-btn-thanhcong{
+    position: absolute;
+    top: 230px;
+    right: 100px;
+    width: 30px;
+    height: 30px;
+    opacity: 0.95;
+    z-index: 2055;
+    pointer-events: auto;
+    background-image: url('/Asset/TN/exit.png');
+    background-size: 100% 100%;
+}
