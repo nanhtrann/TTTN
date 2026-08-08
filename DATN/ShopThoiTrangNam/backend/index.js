@@ -16,7 +16,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 const dbConfig = process.env.MYSQL_URL || {
     host: process.env.DB_HOST || 'altaria.proxy.rlwy.net',
     user: process.env.DB_USER || 'root',
-    password: process.env.DB_PASSWORD || 'AIEoVMTMgnSyHSYkPSvFTANKAVwcuhTb',
+    password: process.env.DB_PASSWORD || 'AIEoVMTMgnSyHSYkpSVfTANKAVwcuhTb',
     database: process.env.DB_NAME || 'railway',
     port: process.env.DB_PORT || 32780
 };
