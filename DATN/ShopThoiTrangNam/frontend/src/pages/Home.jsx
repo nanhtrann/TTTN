@@ -6,7 +6,7 @@ import newsService from '../services/newsService';
 import bannerService from '../services/bannerService';
 import { resolveImageUrl } from '../utils/imageUtils';
 
-const fallbackHeroImage = 'http://localhost:5000/uploads/banners/banner-hero.jpg';
+const fallbackHeroImage = '/uploads/banners/banner-hero.jpg';
 
 const fallbackNews = [
     {

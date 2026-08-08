@@ -9,6 +9,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+// Cấp quyền truy cập thư mục chứa ảnh
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // --- 1. CẤU HÌNH KẾT NỐI MYSQL TỪ .ENV ---
 const dbConfig = {
