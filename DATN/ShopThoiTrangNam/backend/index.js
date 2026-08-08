@@ -2,17 +2,27 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-// Phục vụ giao diện từ thư mục dist
+// 1. Phục vụ các file tĩnh từ thư mục dist (nơi chứa React đã build)
 app.use(express.static(path.join(__dirname, 'dist')));
 
-// API của bạn (ví dụ)
-app.get('/api/data', (req, res) => {
-    res.json({ message: "Hello from Backend!" });
+// 2. Định nghĩa các API của bạn ở phía trên (Ví dụ)
+app.get('/api/test', (req, res) => {
+    res.json({ message: "Backend đang hoạt động!" });
 });
 
-// Chuyển mọi request khác về index.html của React
-app.get('*', (req, res) => {
+// 3. SỬA LỖI TẠI ĐÂY:
+// Dùng regex để khớp tất cả các route KHÔNG BẮT ĐẦU BẰNG /api
+// Điều này giúp React Router xử lý các route riêng của nó
+app.get(/^(?!\/api).+/, (req, res) => {
     res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
-app.listen(process.env.PORT || 3000);
+// Hoặc nếu bạn không có API nào bắt đầu bằng /api và muốn bắt tất cả:
+// app.get('/*', (req, res) => {
+//    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+// });
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server đang chạy tại cổng ${PORT}`);
+});
