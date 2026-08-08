@@ -12,8 +12,8 @@ app.use(express.urlencoded({ extended: true }));
 // Cấp quyền truy cập thư mục chứa ảnh
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-// --- 1. CẤU HÌNH KẾT NỐI MYSQL TỪ .ENV ---
-const dbConfig = {
+// --- 1. CẤU HÌNH KẾT NỐI MYSQL TỪ MDB_URL / MYSQL_URL ---
+const dbConfig = process.env.MYSQL_URL || process.env.MDB_URL || {
     host: process.env.DB_HOST || 'localhost',
     user: process.env.DB_USER || 'root',
     password: process.env.DB_PASSWORD || '',
