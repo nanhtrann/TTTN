@@ -12,13 +12,13 @@ app.use(express.urlencoded({ extended: true }));
 // Cấp quyền truy cập thư mục chứa ảnh
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-// --- 1. CẤU HÌNH KẾT NỐI MYSQL TỪ MDB_URL / MYSQL_URL ---
-const dbConfig = process.env.MYSQL_URL || process.env.MDB_URL || {
-    host: process.env.DB_HOST || 'localhost',
+// --- 1. CẤU HÌNH KẾT NỐI MYSQL ---
+const dbConfig = process.env.MYSQL_URL || {
+    host: process.env.DB_HOST || 'altaria.proxy.rlwy.net',
     user: process.env.DB_USER || 'root',
-    password: process.env.DB_PASSWORD || '',
-    database: process.env.DB_NAME || 'mens_fashion_shop',
-    port: process.env.DB_PORT || 3306
+    password: process.env.DB_PASSWORD || 'AIEoVMTMgnSyHSYkPSvFTANKAVwcuhTb',
+    database: process.env.DB_NAME || 'railway',
+    port: process.env.DB_PORT || 32780
 };
 
 async function testDBConnection() {
