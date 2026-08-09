@@ -50,6 +50,7 @@ totalRevenue
 // GET /api/dashboard/chart-data - Dữ liệu biểu đồ cho Admin Dashboard
 exports.getChartData = async (req, res) => {
     try {
+        // === 1. Doanh thu theo 7 ngày gần nhất (bar chart) ===
         const last7Days = [];
         for (let i = 6; i >= 0; i--) {
             const day = new Date();
@@ -78,6 +79,7 @@ exports.getChartData = async (req, res) => {
             });
         }
 
+        // === 2. Đơn hàng & doanh thu theo 6 tháng gần nhất (line chart) ===
         const monthly = [];
         for (let i = 5; i >= 0; i--) {
             const now = new Date();
@@ -101,6 +103,7 @@ exports.getChartData = async (req, res) => {
             });
         }
 
+// === 3. Top 5 sản phẩm bán chạy (horizontal bar) ===
         const [topProductsData] = await sequelize.query(
             `SELECT od.product_id, SUM(od.quantity) as totalQty, SUM(od.quantity * od.price) as totalRevenue,
                     p.name, p.image
@@ -118,6 +121,7 @@ exports.getChartData = async (req, res) => {
             revenue: Number(item.totalRevenue || 0)
         }));
 
+        // === 4. Phân bố đơn hàng theo trạng thái (donut) ===
         const statusDistribution = [];
         const statusLabels = {
             Pending: { label: 'Chờ xử lý', color: '#facc15' },

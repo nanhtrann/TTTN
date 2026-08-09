@@ -1,6 +1,11 @@
 import React from 'react';
 import { resolveImageUrl } from '../utils/imageUtils';
 
+// ============================================================
+// BỘ BIỂU ĐỒ THUẦN SVG/CSS - KHÔNG CẦN THƯ VIỆN NGOÀI
+// ============================================================
+
+// ---------- BIỂU ĐỒ CỘT (Bar Chart) ----------
 // Dữ liệu: [{ label, value }]
 export function BarChart({ data = [], height = 220, color = '#3b82f6', formatValue = (v) => v }) {
     const max = Math.max(1, ...data.map((d) => Number(d.value) || 0));
@@ -30,6 +35,7 @@ export function BarChart({ data = [], height = 220, color = '#3b82f6', formatVal
     );
 }
 
+// ---------- BIỂU ĐỒ ĐƯỜNG (Line Chart) ----------
 // Dữ liệu: [{ label, value }]
 export function LineChart({ data = [], height = 220, color = '#22c55e', formatValue = (v) => v }) {
     const width = 300;
@@ -86,6 +92,7 @@ export function LineChart({ data = [], height = 220, color = '#22c55e', formatVa
     );
 }
 
+// ---------- BIỂU ĐỒ TRÒN / DONUT ----------
 // Dữ liệu: [{ label, value, color }]
 export function DonutChart({ data = [], size = 180, thickness = 26 }) {
     const total = data.reduce((sum, d) => sum + (Number(d.value) || 0), 0);
@@ -145,6 +152,7 @@ export function DonutChart({ data = [], size = 180, thickness = 26 }) {
     );
 }
 
+// ---------- BIỂU ĐỒ CỘT NGANG (Horizontal Bar) ----------
 // Dữ liệu: [{ label, value, image }]
 export function HorizontalBarChart({ data = [], color = '#f59e0b', formatValue = (v) => v }) {
     const max = Math.max(1, ...data.map((d) => Number(d.value) || 0));
@@ -181,6 +189,7 @@ export function HorizontalBarChart({ data = [], color = '#f59e0b', formatValue =
     );
 }
 
+// ---------- CARD BỌC BIỂU ĐỒ ----------
 export default function ChartCard({ title, subtitle, children, className = '' }) {
     return (
         <div className={`rounded-2xl border border-white/10 bg-slate-900 p-5 shadow-lg ${className}`}>
